@@ -1,0 +1,735 @@
+<!DOCTYPE html>
+<html><head>
+<title>
+myTischtennis.de - click-TT
+- Verbände
+</title>
+<base href="//www.mytischtennis.de">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+<script src="/_sharedJS/jquery.min.v1.9.1.js" type="text/javascript"></script>
+<script src="/_sharedJS/jquery.matchHeight.js" type="text/javascript"></script>
+<script src="/_sharedJS/common.js?v=8-5-0" type="text/javascript"></script>
+<script src="/_sharedJS/bootstrap.js" type="text/javascript"></script>
+<script src="/_sharedJS/knockout-3.4.1.js" type="text/javascript"></script>
+<script type="text/javascript" src="//script.ioam.de/iam.js"> </script>
+<link href="/clicktt/includes/css/click-tt.css?v=8-5-0" media="all" rel="stylesheet" type="text/css" />
+<script type="text/javascript" src="//storage.googleapis.com/adtags/mytt/click-tt/click-tt.de_PreCall.js"></script>
+<script src="https://www.googletagservices.com/tag/js/gpt.js"></script>
+<script type="text/javascript" src="//storage.googleapis.com/adtags/mytt/click-tt/click-tt.de_AdCall.js"></script>
+</head>
+<body class="click-tt">
+<!-- Version: 8.5.0 -->
+<div class="top-bar hidden-xs hidden-sm hidden-print">
+<div class="container">
+<div class="col-md-offset-3 col-md-9 text-right">
+<div class="partition">
+<form action="/community/login" method="post" class="form-inline">
+<div class="form-group">
+<input type="text" name="userNameB" class="form-control input-sm" placeholder="Name">
+</div>
+<div class="form-group">
+<input type="password" name="userPassWordB" class="form-control input-sm" placeholder="Passwort">
+</div>
+<div class="checkbox">
+<label>
+<input type="checkbox" class="checkbox" name="permalogin" value="1"> Angemeldet bleiben
+</label>
+</div>
+<input type="hidden" name="targetPage" value="/clicktt//verbaende">
+<button type="submit" class="btn btn-primary btn-xs" id="headerLoginButton">Login</button>
+</form>
+</div>
+<div class="partition right">
+<a href="/community/passwordrecovery" class="pw" title="Passwort vergessen?">Passwort vergessen?</a>
+<a href="/community/register" class="reg" title="Registrieren">Registrieren »</a>
+</div>
+</div>
+</div>
+</div>
+<div class="header_fx hidden-xs hidden-sm hidden-print">
+<div class="container">
+<h1>
+<a href="/clicktt/home">
+<img src='/public/images/mytt_logo_gruen_340x69.png'>
+</a>
+</h1>
+<ul class="mytt-tabs">
+<li class="click-tt">
+<img class="beta" src="/images/beta.png" alt="BETA"/>
+<a href="/clicktt/verbaende" class="current" title="click-TT">click-TT</a>
+</li>
+<li class="portal">
+<a href="/public/home" class="" title="Portal">Portal</a>
+</li>
+<li class="community">
+<a href="/community/index" class="" title="myTischtennis">myTischtennis</a>
+</li>
+</ul>
+</div>
+</div>
+<nav class="navbar navbar-default navbar-clicktt navbar-fixed-top-mobile hidden-print" id="sticky-navigation">
+<div class="container">
+<div class="navbar-header">
+<button type="button" class="navbar-toggle collapsed pull-left" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+<span class="sr-only">
+Toggle navigation
+</span>
+<span class="icon-bar">
+</span>
+<span class="icon-bar">
+</span>
+<span class="icon-bar">
+</span>
+<span class="icon-bar">
+</span>
+</button>
+<a class="navbar-brand visible-xs visible-sm" href="/clicktt/home">
+<img src="/public/images/mytt_logo_gruen_148x30.png" alt="myTischtennis.de" />
+</a>
+<div class="navbar-text quicknav visible-xs visible-sm">
+<div class="dropdown">
+<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" area-haspopup="true" aria-expanded="false"><i class="icon-big icon-user icon-grey"></i></a>
+<ul class="dropdown-menu dropdown-menu-right" style="min-width: 250px; padding: 18px">
+<li>
+<div class="row">
+<div class="col-md-12">
+<form action="/community/login.cfm" method="post" class="form-horizontal" id="login-nav">
+<input type="hidden" name="targetPage" value="http://www.mytischtennis.de/clicktt/verbaende">
+<div class="form-group">
+<label class="sr-only" for="quicknav-username">Nutzername</label>
+<input type="text" id="quicknav-username" name="userNameB" class="form-control" placeholder="Name" required>
+</div>
+<div class="form-group">
+<label class="sr-only" for="exampleInputPassword2">Passwort</label>
+<input type="password" id="quicknav-password" name="userPassWordB" class="form-control" placeholder="Passwort" required>
+</div>
+<div class="form-group">
+<div class="checkbox">
+<label>
+<input type="checkbox" name="permalogin" value="1"> Angemeldet bleiben
+</label>
+</div>
+</div>
+<div class="form-group">
+<button type="submit" class="btn btn-primary btn-block">Einloggen</button>
+</div>
+</form>
+<a href="/community/passwordrecovery" class="pw" title="Passwort vergessen?">Passwort vergessen?</a><br/>
+<a href="/community/register" class="reg" title="Registrieren">Registrieren »</a>
+</div>
+</div>
+</li>
+</ul>
+</div>
+</div>
+<div class="navbar-subnav">
+<span class="click-tt">
+<img class="beta" src="/images/beta.png" alt="BETA"/>
+<a href="/clicktt/verbaende"><i class="icon-table"></i> click-TT</a>
+</span>
+<span class="portal">
+<a href="/public/home/"><i class="icon-desktop"></i> Portal</a>
+</span>
+<span class="community">
+<a href="/community/"><i class="icon-user"></i> Community</a>
+</span>
+</div>
+</div>
+<div id="navbar" class="navbar-collapse collapse">
+<ul class="nav navbar-nav">
+<li class="active">
+<a href="/clicktt/verbaende">Verbände</a>
+</li>
+<li class="">
+<a href="/clicktt/home">Mein click-TT</a>
+</li>
+<li class="disabled">
+<a href="#" data-disabled-reason="Um den Ligenplan nutzen zu können, musst du zuerst einen Verband auswählen." class="unclickable">Ligenplan </a>
+</li>
+<li class="disabled">
+<a href="#" data-disabled-reason="Um die Vereins- und Spielersuche nutzen zu können, musst du zuerst einen Verband auswählen" class="unclickable">Suche</a>
+</li>
+</ul>
+</div>
+</div>
+</nav>
+<div class="container" id="content-container">
+<div class="row hidden-print">
+<div class="col-md-12">
+<a name="content"></a>
+<ol class="breadcrumb"> 
+<li><a href="/clicktt/home" title="Home">Home</a>
+<li class="active">Verbände</li>
+</ol>
+</div>
+</div>
+<div class="row hidden-print">
+<div class="text-center ontopbanner" id="topBanner">
+<!-- Beginning Async AdSlot 1 for Ad unit myTischtennis_GmbH/mytischtennis.de ### size: [[728,90],[800,250],[900,250],[320,50]] -->
+<!-- Adslot's refresh function: googletag.pubads().refresh([gptadslots[1]]) -->
+<div id='div-gpt-ad-149594444772628791-1'>
+<script type='text/javascript'>
+googletag.cmd.push(function() { googletag.display('div-gpt-ad-149594444772628791-1'); });
+</script>
+</div>
+<!-- End AdSlot 1 -->
+<div class="sky">
+<!-- Beginning Async AdSlot 2 for Ad unit myTischtennis_GmbH/mytischtennis.de ### size: [[160,600],[300,600]] -->
+<!-- Adslot's refresh function: googletag.pubads().refresh([gptadslots[2]]) -->
+<div id='div-gpt-ad-149594444772628791-2'>
+<script type='text/javascript'>
+googletag.cmd.push(function() { googletag.display('div-gpt-ad-149594444772628791-2'); });
+</script>
+</div>
+<!-- End AdSlot 2 -->
+</div>
+</div>
+</div>
+<div class="row">
+<div class="col-md-12">
+<div class="panel panel-primary federations-select">
+<div class="panel-heading">
+<h3 class="panel-title">Alle Verbände</h3>
+</div>
+<div class="panel-body">
+<div class="row hidden-sm hidden-xs">
+<div class="col-md-2">
+<a href="/clicktt/BaTTV/17-18/ligen">
+<div class="thumbnail">
+<div class="image">
+<img class="img-responsive" src="/clicktt/includes/images/blazons/battv.png" alt="Badischer Tischtennis-Verband e.V.">
+</div>
+<div class="caption text-center">
+<h5 data-mh="federation-link-headline">
+Baden (BaTTV)	
+</h5>
+</div>
+</div>
+</a>
+</div>
+<div class="col-md-2">
+<a href="/clicktt/ByTTV/17-18/ligen">
+<div class="thumbnail">
+<div class="image">
+<img class="img-responsive" src="/clicktt/includes/images/blazons/byttv.png" alt="Bayerischer Tischtennis-Verband e.V.">
+</div>
+<div class="caption text-center">
+<h5 data-mh="federation-link-headline">
+Bayern (ByTTV)	
+</h5>
+</div>
+</div>
+</a>
+</div>
+<div class="col-md-2">
+<a href="/clicktt/TTVB/17-18/ligen">
+<div class="thumbnail">
+<div class="image">
+<img class="img-responsive" src="/clicktt/includes/images/blazons/ttvb.png" alt="TTV Brandenburg">
+</div>
+<div class="caption text-center">
+<h5 data-mh="federation-link-headline">
+Brandenburg (TTVB)	
+</h5>
+</div>
+</div>
+</a>
+</div>
+<div class="col-md-2">
+<a href="/clicktt/FTTB/17-18/ligen">
+<div class="thumbnail">
+<div class="image">
+<img class="img-responsive" src="/clicktt/includes/images/blazons/fttb.png" alt="Fachverband Tischtennis Bremen e.V.">
+</div>
+<div class="caption text-center">
+<h5 data-mh="federation-link-headline">
+Bremen (FTTB)	
+</h5>
+</div>
+</div>
+</a>
+</div>
+<div class="col-md-2">
+<a href="/clicktt/HaTTV/17-18/ligen">
+<div class="thumbnail">
+<div class="image">
+<img class="img-responsive" src="/clicktt/includes/images/blazons/hattv.png" alt="Hamburger Tischtennis-Verband e.V.">
+</div>
+<div class="caption text-center">
+<h5 data-mh="federation-link-headline">
+Hamburg (HaTTV)	
+</h5>
+</div>
+</div>
+</a>
+</div>
+<div class="col-md-2">
+<a href="/clicktt/HeTTV/17-18/ligen">
+<div class="thumbnail">
+<div class="image">
+<img class="img-responsive" src="/clicktt/includes/images/blazons/hettv.png" alt="Hessischer Tischtennis-Verband e.V.">
+</div>
+<div class="caption text-center">
+<h5 data-mh="federation-link-headline">
+Hessen (HeTTV)	
+</h5>
+</div>
+</div>
+</a>
+</div>
+<div class="col-md-2">
+<a href="/clicktt/TTVMV/17-18/ligen">
+<div class="thumbnail">
+<div class="image">
+<img class="img-responsive" src="/clicktt/includes/images/blazons/ttvmv.png" alt="TTV Mecklenburg-Vorpommern">
+</div>
+<div class="caption text-center">
+<h5 data-mh="federation-link-headline">
+Mecklenburg-Vorpommern (TTVMV)	
+</h5>
+</div>
+</div>
+</a>
+</div>
+<div class="col-md-2">
+<a href="/clicktt/TTVN/17-18/ligen">
+<div class="thumbnail">
+<div class="image">
+<img class="img-responsive" src="/clicktt/includes/images/blazons/ttvn.png" alt="Tischtennis-Verband Niedersachsen e.V.">
+</div>
+<div class="caption text-center">
+<h5 data-mh="federation-link-headline">
+Niedersachsen (TTVN)	
+</h5>
+</div>
+</div>
+</a>
+</div>
+<div class="col-md-2">
+<a href="/clicktt/PTTV/17-18/ligen">
+<div class="thumbnail">
+<div class="image">
+<img class="img-responsive" src="/clicktt/includes/images/blazons/pttv.png" alt="Pfälzischer TTV">
+</div>
+<div class="caption text-center">
+<h5 data-mh="federation-link-headline">
+Pfalz (PTTV)	
+</h5>
+</div>
+</div>
+</a>
+</div>
+<div class="col-md-2">
+<a href="/clicktt/RTTV/17-18/ligen">
+<div class="thumbnail">
+<div class="image">
+<img class="img-responsive" src="/clicktt/includes/images/blazons/rttv.png" alt="Rheinhessischer Tischtennis-Verband e.V.">
+</div>
+<div class="caption text-center">
+<h5 data-mh="federation-link-headline">
+Rheinhessen (RTTV)	
+</h5>
+</div>
+</div>
+</a>
+</div>
+<div class="col-md-2">
+<a href="/clicktt/TTVR/17-18/ligen">
+<div class="thumbnail">
+<div class="image">
+<img class="img-responsive" src="/clicktt/includes/images/blazons/ttvr.png" alt="Tischtennisverband Rheinland e.V.">
+</div>
+<div class="caption text-center">
+<h5 data-mh="federation-link-headline">
+Rheinland (TTVR)	
+</h5>
+</div>
+</div>
+</a>
+</div>
+<div class="col-md-2">
+<a href="/clicktt/STTB/17-18/ligen">
+<div class="thumbnail">
+<div class="image">
+<img class="img-responsive" src="/clicktt/includes/images/blazons/sttb.png" alt="Saarländischer TTB">
+</div>
+<div class="caption text-center">
+<h5 data-mh="federation-link-headline">
+Saarland (STTB)	
+</h5>
+</div>
+</div>
+</a>
+</div>
+<div class="col-md-2">
+<a href="/clicktt/TTVSA/17-18/ligen">
+<div class="thumbnail">
+<div class="image">
+<img class="img-responsive" src="/clicktt/includes/images/blazons/ttvsa.png" alt="Tischtennis-Verband Sachsen-Anhalt e. V.">
+</div>
+<div class="caption text-center">
+<h5 data-mh="federation-link-headline">
+Sachsen-Anhalt (TTVSA)	
+</h5>
+</div>
+</div>
+</a>
+</div>
+<div class="col-md-2">
+<a href="/clicktt/SbTTV/17-18/ligen">
+<div class="thumbnail">
+<div class="image">
+<img class="img-responsive" src="/clicktt/includes/images/blazons/sbttv.png" alt="Südbadischer Tischtennis-Verband">
+</div>
+<div class="caption text-center">
+<h5 data-mh="federation-link-headline">
+Südbaden (SbTTV)	
+</h5>
+</div>
+</div>
+</a>
+</div>
+<div class="col-md-2">
+<a href="/clicktt/TTTV/17-18/ligen">
+<div class="thumbnail">
+<div class="image">
+<img class="img-responsive" src="/clicktt/includes/images/blazons/tttv.png" alt="Thüringer TTV">
+</div>
+<div class="caption text-center">
+<h5 data-mh="federation-link-headline">
+Thüringen (TTTV)	
+</h5>
+</div>
+</div>
+</a>
+</div>
+<div class="col-md-2">
+<a href="/clicktt/WTTV/17-18/ligen">
+<div class="thumbnail">
+<div class="image">
+<img class="img-responsive" src="/clicktt/includes/images/blazons/wttv.png" alt="Westdeutscher Tischtennis-Verband e.V.">
+</div>
+<div class="caption text-center">
+<h5 data-mh="federation-link-headline">
+NRW (WTTV)	
+</h5>
+</div>
+</div>
+</a>
+</div>
+<div class="col-md-2">
+<a href="/clicktt/TTVWH/17-18/ligen">
+<div class="thumbnail">
+<div class="image">
+<img class="img-responsive" src="/clicktt/includes/images/blazons/ttvwh.png" alt="Tischtennisverband Württemberg-Hohenzollern e.V.">
+</div>
+<div class="caption text-center">
+<h5 data-mh="federation-link-headline">
+Württemberg-Hohenzollern (TTVWH)	
+</h5>
+</div>
+</div>
+</a>
+</div>
+<div class="col-md-2">
+<a href="/clicktt/DTTB/17-18/ligen">
+<div class="thumbnail">
+<div class="image">
+<img class="img-responsive" src="/clicktt/includes/images/blazons/dttb.png" alt="Deutscher Tischtennis-Bund">
+</div>
+<div class="caption text-center">
+<h5 data-mh="federation-link-headline">
+DTTB (DTTB)	
+</h5>
+</div>
+</div>
+</a>
+</div>
+</div>
+<div class="row visible-sm visible-xs">
+<ul class="list-group">
+<li class="list-group-item" id="BaTTV">
+<a class="row" href="/clicktt/BaTTV/17-18/ligen">
+<span class="col-xs-5 text-center">
+<img class="img-responsive" src="/clicktt/includes/images/blazons/battv.png" alt="Badischer Tischtennis-Verband e.V.">
+</span>
+<span class="col-xs-7">
+<h4 class="m-t">Baden</h4>
+</span>
+</a>
+</li>
+<li class="list-group-item" id="ByTTV">
+<a class="row" href="/clicktt/ByTTV/17-18/ligen">
+<span class="col-xs-5 text-center">
+<img class="img-responsive" src="/clicktt/includes/images/blazons/byttv.png" alt="Bayerischer Tischtennis-Verband e.V.">
+</span>
+<span class="col-xs-7">
+<h4 class="m-t">Bayern</h4>
+</span>
+</a>
+</li>
+<li class="list-group-item" id="TTVB">
+<a class="row" href="/clicktt/TTVB/17-18/ligen">
+<span class="col-xs-5 text-center">
+<img class="img-responsive" src="/clicktt/includes/images/blazons/ttvb.png" alt="TTV Brandenburg">
+</span>
+<span class="col-xs-7">
+<h4 class="m-t">Brandenburg</h4>
+</span>
+</a>
+</li>
+<li class="list-group-item" id="FTTB">
+<a class="row" href="/clicktt/FTTB/17-18/ligen">
+<span class="col-xs-5 text-center">
+<img class="img-responsive" src="/clicktt/includes/images/blazons/fttb.png" alt="Fachverband Tischtennis Bremen e.V.">
+</span>
+<span class="col-xs-7">
+<h4 class="m-t">Bremen</h4>
+</span>
+</a>
+</li>
+<li class="list-group-item" id="HaTTV">
+<a class="row" href="/clicktt/HaTTV/17-18/ligen">
+<span class="col-xs-5 text-center">
+<img class="img-responsive" src="/clicktt/includes/images/blazons/hattv.png" alt="Hamburger Tischtennis-Verband e.V.">
+</span>
+<span class="col-xs-7">
+<h4 class="m-t">Hamburg</h4>
+</span>
+</a>
+</li>
+<li class="list-group-item" id="HeTTV">
+<a class="row" href="/clicktt/HeTTV/17-18/ligen">
+<span class="col-xs-5 text-center">
+<img class="img-responsive" src="/clicktt/includes/images/blazons/hettv.png" alt="Hessischer Tischtennis-Verband e.V.">
+</span>
+<span class="col-xs-7">
+<h4 class="m-t">Hessen</h4>
+</span>
+</a>
+</li>
+<li class="list-group-item" id="TTVMV">
+<a class="row" href="/clicktt/TTVMV/17-18/ligen">
+<span class="col-xs-5 text-center">
+<img class="img-responsive" src="/clicktt/includes/images/blazons/ttvmv.png" alt="TTV Mecklenburg-Vorpommern">
+</span>
+<span class="col-xs-7">
+<h4 class="m-t">Mecklenburg-Vorpommern</h4>
+</span>
+</a>
+</li>
+<li class="list-group-item" id="TTVN">
+<a class="row" href="/clicktt/TTVN/17-18/ligen">
+<span class="col-xs-5 text-center">
+<img class="img-responsive" src="/clicktt/includes/images/blazons/ttvn.png" alt="Tischtennis-Verband Niedersachsen e.V.">
+</span>
+<span class="col-xs-7">
+<h4 class="m-t">Niedersachsen</h4>
+</span>
+</a>
+</li>
+<li class="list-group-item" id="PTTV">
+<a class="row" href="/clicktt/PTTV/17-18/ligen">
+<span class="col-xs-5 text-center">
+<img class="img-responsive" src="/clicktt/includes/images/blazons/pttv.png" alt="Pfälzischer TTV">
+</span>
+<span class="col-xs-7">
+<h4 class="m-t">Pfalz</h4>
+</span>
+</a>
+</li>
+<li class="list-group-item" id="RTTV">
+<a class="row" href="/clicktt/RTTV/17-18/ligen">
+<span class="col-xs-5 text-center">
+<img class="img-responsive" src="/clicktt/includes/images/blazons/rttv.png" alt="Rheinhessischer Tischtennis-Verband e.V.">
+</span>
+<span class="col-xs-7">
+<h4 class="m-t">Rheinhessen</h4>
+</span>
+</a>
+</li>
+<li class="list-group-item" id="TTVR">
+<a class="row" href="/clicktt/TTVR/17-18/ligen">
+<span class="col-xs-5 text-center">
+<img class="img-responsive" src="/clicktt/includes/images/blazons/ttvr.png" alt="Tischtennisverband Rheinland e.V.">
+</span>
+<span class="col-xs-7">
+<h4 class="m-t">Rheinland</h4>
+</span>
+</a>
+</li>
+<li class="list-group-item" id="STTB">
+<a class="row" href="/clicktt/STTB/17-18/ligen">
+<span class="col-xs-5 text-center">
+<img class="img-responsive" src="/clicktt/includes/images/blazons/sttb.png" alt="Saarländischer TTB">
+</span>
+<span class="col-xs-7">
+<h4 class="m-t">Saarland</h4>
+</span>
+</a>
+</li>
+<li class="list-group-item" id="TTVSA">
+<a class="row" href="/clicktt/TTVSA/17-18/ligen">
+<span class="col-xs-5 text-center">
+<img class="img-responsive" src="/clicktt/includes/images/blazons/ttvsa.png" alt="Tischtennis-Verband Sachsen-Anhalt e. V.">
+</span>
+<span class="col-xs-7">
+<h4 class="m-t">Sachsen-Anhalt</h4>
+</span>
+</a>
+</li>
+<li class="list-group-item" id="SbTTV">
+<a class="row" href="/clicktt/SbTTV/17-18/ligen">
+<span class="col-xs-5 text-center">
+<img class="img-responsive" src="/clicktt/includes/images/blazons/sbttv.png" alt="Südbadischer Tischtennis-Verband">
+</span>
+<span class="col-xs-7">
+<h4 class="m-t">Südbaden</h4>
+</span>
+</a>
+</li>
+<li class="list-group-item" id="TTTV">
+<a class="row" href="/clicktt/TTTV/17-18/ligen">
+<span class="col-xs-5 text-center">
+<img class="img-responsive" src="/clicktt/includes/images/blazons/tttv.png" alt="Thüringer TTV">
+</span>
+<span class="col-xs-7">
+<h4 class="m-t">Thüringen</h4>
+</span>
+</a>
+</li>
+<li class="list-group-item" id="WTTV">
+<a class="row" href="/clicktt/WTTV/17-18/ligen">
+<span class="col-xs-5 text-center">
+<img class="img-responsive" src="/clicktt/includes/images/blazons/wttv.png" alt="Westdeutscher Tischtennis-Verband e.V.">
+</span>
+<span class="col-xs-7">
+<h4 class="m-t">NRW</h4>
+</span>
+</a>
+</li>
+<li class="list-group-item" id="TTVWH">
+<a class="row" href="/clicktt/TTVWH/17-18/ligen">
+<span class="col-xs-5 text-center">
+<img class="img-responsive" src="/clicktt/includes/images/blazons/ttvwh.png" alt="Tischtennisverband Württemberg-Hohenzollern e.V.">
+</span>
+<span class="col-xs-7">
+<h4 class="m-t">Württemberg-Hohenzollern</h4>
+</span>
+</a>
+</li>
+<li class="list-group-item" id="DTTB">
+<a class="row" href="/clicktt/DTTB/17-18/ligen">
+<span class="col-xs-5 text-center">
+<img class="img-responsive" src="/clicktt/includes/images/blazons/dttb.png" alt="Deutscher Tischtennis-Bund">
+</span>
+<span class="col-xs-7">
+<h4 class="m-t">DTTB</h4>
+</span>
+</a>
+</li>
+</ul>
+</div>
+</div>
+<div class="panel-footer"></div>
+</div>
+<div class="panel panel-primary hidden-print">
+<div class="panel-heading">
+<h3 class="panel-title">Anzeige</h3>
+</div>
+<div class="panel-body text-center">
+<!-- Beginning Async AdSlot 3 for Ad unit myTischtennis_GmbH/mytischtennis.de/mytischtennis.de_click-tt.de ### size: [[728,90],[800,250],[900,250],[300,250]] -->
+<!-- Adslot's refresh function: googletag.pubads().refresh([gptadslots[3]]) -->
+<div id='div-gpt-ad-518943210402310848-3'>
+<script type='text/javascript'>
+googletag.cmd.push(function() { googletag.display('div-gpt-ad-518943210402310848-3'); });
+</script>
+</div>
+<!-- End AdSlot 3 -->
+</div>
+<div class="panel-footer"></div>
+</div>
+</div>
+</div>
+</div>
+<div class="clearfix"></div>
+<div class="hidden-print">
+<div class="whitebox_fx mt_30">
+<div class="bg_spon_top"></div>
+<div class="bg_spon_bottom"></div>
+</div> 
+<div class="graybox_fx">
+<div class="container">
+<div class="row">
+<div class="col-xs-6 col-sm-3 col-md-2">
+<div class="headline"><h5>Service</h5></div>
+<ul>
+<li><a href="/public/newsletterSubscribe" title="Newsletter">Newsletter</a></li>
+<li><a href="/community/faq" title="FAQ">FAQ</a></li>
+<li><a href="/public/datenschutz" title="Datenschutz">Datenschutz</a></li>
+<li><a href="/public/mediadaten" title="Mediadaten">Mediadaten</a></li>
+</ul>
+</div>
+<div class="col-xs-6 col-sm-3 col-sm-offset-1 col-md-2 col-md-offset-1">
+<div class="headline"><h5>Informationen</h5></div>
+<ul>
+<li><a href="/public/impressum" title="Impressum">Impressum</a></li>
+<li><a href="/public/agb" title="AGB">AGB</a></li>
+<li><a href="/public/kontakt" title="Kontakt">Kontakt</a></li>
+<li><a href="/public/mytischtennis-news/9997/wir-ueber-uns" title="Wir über uns">Wir über uns</a></li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+<div class="cookie-bar" style="display:none;">
+<p>Cookies erleichtern die Bereitstellung unserer Dienste. Mit der Nutzung unserer Dienste erklären Sie sich damit einverstanden, dass wir Cookies verwenden.<a class="btn btn-xs btn-primary" style="margin-left: 15px;">OK</a></p>
+</div>
+<div class="onbottomnavi_fx bg_ci_blue text-center">
+<p class="m-t white m-b">Copyright &copy; 2018 myTischtennis GmbH. Alle Rechte vorbehalten. </p>
+</div>
+</div>
+<script src="/clicktt/includes/js/knockstrap-1.3.2.js" type="text/javascript"></script>
+<script src="/clicktt/includes/js/global.js?v=8-5-0" type="text/javascript"></script>
+<script type="text/html" id="popover-friendship-template">
+<p>Möchtest Du die Freundschaftsanfrage an <em data-bind="text: userDisplayName"></em> versenden?</p>
+<label for="friendship-popover-message">Nachricht hinzufügen (optional)</label>
+<textarea id="friendship-popover-message" name="message" class="form-control" rows="5"></textarea>
+</script>
+<div class="friendship-popover-modal" data-bind="modal: {
+visible: friendshipModal.visible,
+header: { data: { label: 'Freundschaft anbieten' } },
+body: { name: 'popover-friendship-template', data: friendshipModal },
+footer: { data: { primaryLabel: 'Anfrage senden', action: friendshipModal.sendRequest, closeLabel: 'abbrechen' } }
+}"></div>
+<script type="text/javascript">
+var viewModel = new ClickTTMainViewModel({
+hasFederation: false,
+urls: {
+friendship: '/community/ajax/_friendShipRequest' 
+}
+});
+viewModel.bind();
+window.mainModel = viewModel;
+</script>
+<script type="text/javascript">
+var _gaq = _gaq || [];
+_gaq.push(['_setAccount', 'UA-19104087-1']);
+_gaq.push(['_trackPageview']);
+(function() {
+var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+})();
+</script>
+<!-- Beginning Async AdSlot 5 for Ad unit myTischtennis_GmbH ### size: Out of Page -->
+<!-- Adslot's refresh function: googletag.pubads().refresh([gptadslots[5]]) -->
+<div id='div-gpt-ad-518943210402310848-5'>
+<script type='text/javascript'>
+googletag.cmd.push(function() { googletag.display('div-gpt-ad-518943210402310848-5'); });
+</script>
+</div>
+<!-- End AdSlot 5 -->
+</body>
+</html>
